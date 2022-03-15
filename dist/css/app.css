@@ -1,0 +1,139 @@
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+header .text-area {
+  color: #70592e;
+  position: relative;
+  top: 0;
+  height: 100vh;
+  z-index: 1;
+}
+header .text-area p,
+header .text-area i {
+  transition: 0.7s ease-out;
+}
+header .text-area.hide p, header .text-area.hide i {
+  opacity: 0;
+}
+header .banner-area {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-clip-path: circle(0 at center);
+          clip-path: circle(0 at center);
+}
+
+.about-me {
+  position: relative;
+  margin-top: 200vh;
+  color: #8d6476;
+  background-color: #fff;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.about-me h2 {
+  color: #8d6476;
+  display: inline-block;
+  padding: 5px;
+  background: linear-gradient(90deg, #fff 0%, #fff 15%, #ebd5d6 45%, #ebd5d6 45%, #fff 75%, #fff 100%);
+}
+
+.my-gallery {
+  position: relative;
+  color: #70592e;
+  background-color: #fff;
+  padding-top: 70px;
+  padding-bottom: 170px;
+}
+.my-gallery h2 {
+  color: #70592e;
+  display: inline-block;
+  padding: 5px;
+  background: linear-gradient(90deg, #fff 0%, #fff 15%, #ecc44a 45%, #ecc44a 45%, #fff 75%, #fff 100%);
+}
+.my-gallery .card {
+  border: 1px dotted #70592e;
+}
+.my-gallery .card .img-area {
+  background: radial-gradient(transparent 5%, #70592e 9%) 0 0/20px 20px;
+}
+.my-gallery .card .img-area img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.my-gallery .card p {
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+@media (max-width: 767.98px) {
+  .my-gallery .card p {
+    -webkit-line-clamp: 2;
+  }
+}
+.my-gallery .card small {
+  color: #ecc44a;
+}
+.my-gallery .card a {
+  color: #70592e;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.my-gallery .card a:hover, .my-gallery .card a:active {
+  -webkit-text-decoration: underline dotted #ecc44a !important;
+          text-decoration: underline dotted #ecc44a !important;
+}
+
+.sub-gallery {
+  color: #8d6476;
+  background-color: #fff;
+  padding-top: 70px;
+  padding-bottom: 170px;
+}
+.sub-gallery h2 {
+  color: #8d6476;
+  display: inline-block;
+  padding: 5px;
+  background: linear-gradient(90deg, #fff 0%, #fff 15%, #ebd5d6 45%, #ebd5d6 45%, #fff 75%, #fff 100%);
+}
+.sub-gallery .nav .nav-link {
+  color: #ecc44a;
+}
+.sub-gallery .nav .nav-link.active {
+  background-color: transparent;
+  color: #70592e;
+  -webkit-text-decoration: underline dotted #ecc44a;
+          text-decoration: underline dotted #ecc44a;
+}
+.sub-gallery .tab-content {
+  border: 1px dotted #ecc44a;
+}
+.sub-gallery .tab-content img {
+  width: 100%;
+}
+
+footer {
+  position: relative;
+  color: #fff;
+  background-color: #8d6476;
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+footer i,
+footer a {
+  color: #fff;
+  font-size: 20px;
+}
+footer a:hover {
+  color: #fff;
+}

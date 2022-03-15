@@ -1,0 +1,207 @@
+// Variables
+$color-primary: #8d6476;
+$color-secondary: #70592e;
+$color-light: #fff;
+$color-soft: #ebd5d6;
+$color-warning: #ecc44a;
+$color-red: #ff3e3e;
+
+// Mixins
+$breakpoints-up: ('sm': '576px',
+    'md': '768px',
+    'lg': '992px',
+    'xl': '1200px'
+);
+
+$breakpoints-down: ('xs': '575.98px',
+    'sm': '767.98px',
+    'md': '991.98px',
+    'lg': '1199.98px'
+);
+
+@mixin breakpoints-up($width) {
+    @media (min-width: map-get($breakpoints-up, $width)) {
+        @content;
+    }
+}
+
+@mixin breakpoints-down($width) {
+    @media (max-width: map-get($breakpoints-down, $width)) {
+        @content;
+    }
+}
+
+@mixin breakpoints-between($min-width, $max-width) {
+    @media (min-width: map-get($breakpoints-up, $min-width)) and (max-width: map-get($breakpoints-down, $max-width)) {
+        @content;
+    }
+}
+
+// Global
+* {
+    font-family: 'Nunito Sans',
+        sans-serif;
+}
+
+
+// header
+header {
+    .text-area {
+        color: $color-secondary;
+        position: relative;
+        top: 0;
+        height: 100vh;
+        z-index: 1;
+
+        p,
+        i {
+            transition: .7s ease-out;
+        }
+
+        &.hide p,
+        &.hide i {
+            opacity: 0;
+        }
+    }
+
+    .banner-area {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        clip-path: circle(0 at center);
+    }
+}
+
+// About
+.about-me {
+    position: relative;
+    margin-top: 200vh;
+    color: $color-primary;
+    background-color: $color-light;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    h2 {
+        color: $color-primary;
+        display: inline-block;
+        padding: 5px;
+        background:
+            linear-gradient(90deg, $color-light 0%, $color-light 15%, $color-soft 45%, $color-soft 45%, $color-light 75%, $color-light 100%);
+    }
+}
+
+// Gallery
+.my-gallery {
+    position: relative;
+    color: $color-secondary;
+    background-color: $color-light;
+    padding-top: 70px;
+    padding-bottom: 170px;
+
+    h2 {
+        color: $color-secondary;
+        display: inline-block;
+        padding: 5px;
+        background:
+            linear-gradient(90deg, $color-light 0%, $color-light 15%, $color-warning 45%, $color-warning 45%, $color-light 75%, $color-light 100%);
+    }
+
+    .card {
+        border: 1px dotted $color-secondary;
+
+        .img-area {
+            background: radial-gradient(transparent 5%, $color-secondary 9%) 0 0 / 20px 20px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        p {
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            overflow: hidden;
+
+            @include breakpoints-down(sm) {
+                -webkit-line-clamp: 2;
+            }
+        }
+
+        small {
+            color: $color-warning;
+        }
+
+        a {
+            color: $color-secondary;
+            width: max-content;
+
+            &:hover,
+            &:active {
+                text-decoration: underline dotted $color-warning !important;
+            }
+        }
+    }
+}
+
+// Sub gallery
+.sub-gallery {
+    color: $color-primary;
+    background-color: $color-light;
+    padding-top: 70px;
+    padding-bottom: 170px;
+
+    h2 {
+        color: $color-primary;
+        display: inline-block;
+        padding: 5px;
+        background:
+            linear-gradient(90deg, $color-light 0%, $color-light 15%, $color-soft 45%, $color-soft 45%, $color-light 75%, $color-light 100%);
+    }
+
+    .nav {
+        .nav-link {
+            color: $color-warning;
+
+            &.active {
+                background-color: transparent;
+                color: $color-secondary;
+                text-decoration: underline dotted $color-warning;
+            }
+        }
+    }
+
+    .tab-content {
+        border: 1px dotted $color-warning;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// Footer
+footer {
+    position: relative;
+    color: $color-light;
+    background-color: $color-primary;
+    padding-top: 70px;
+    padding-bottom: 50px;
+
+    i,
+    a {
+        color: $color-light;
+        font-size: 20px;
+    }
+
+    a:hover {
+        color: $color-light;
+    }
+}
