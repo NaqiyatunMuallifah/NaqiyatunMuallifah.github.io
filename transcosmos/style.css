@@ -757,7 +757,7 @@ header .nav-link.__button.active {
   }
 }
 
-@media (max-width: 595.98px) {
+@media (max-width: 575.98px) {
   #project .carousel-item .row {
     height: 300px;
   }
