@@ -732,7 +732,6 @@ header .nav-link.__button.active {
 
 #project .carousel-indicators button.active {
   width: 16px;
-  border-radius: 42%;
   background-color: #5454d4;
 }
 
@@ -857,6 +856,12 @@ footer .__link a.active {
 @media (max-width: 991.98px) {
   footer .__link a {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  footer .__link a {
+    font-size: 13px;
   }
 }
 
